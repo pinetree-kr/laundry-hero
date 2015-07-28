@@ -47,11 +47,11 @@ var all = {
   facebook: {
     clientID:     process.env.FACEBOOK_ID || 'id',
     clientSecret: process.env.FACEBOOK_SECRET || 'secret',
-    callbackURL:  (process.env.DOMAIN || '') + '/auth/facebook/callback'
+    callbackURL:  (process.env.DOMAIN || '') + '/auth/facebook/callback',
+    profileFields : ['id','emails','displayName','gender','birthday','photos'],
   },
 
 };
-
 // Export the config object based on the NODE_ENV
 // ==============================================
 module.exports = _.merge(

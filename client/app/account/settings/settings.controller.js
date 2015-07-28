@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('heroApp')
-  .controller('SettingsCtrl', function ($scope, User, Auth) {
+  .controller('SettingsCtrl', function ($scope, Auth) {
     $scope.errors = {};
+    $scope.getCurrentUser = Auth.getCurrentUser;
 
     $scope.changePassword = function(form) {
       $scope.submitted = true;

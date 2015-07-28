@@ -5,8 +5,14 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/hero-dev'
+    //uri: 'mongodb://119.202.28.205',
+    host: '119.202.28.205',
+    database: 'hero-dev',
+    port:'9317',
+    options:{
+      user: 'admin',
+      pass: 'jhsong85',
+    }
   },
-
-  seedDB: true
+  seedDB: false
 };

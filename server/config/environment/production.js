@@ -15,9 +15,18 @@ module.exports = {
 
   // MongoDB connection options
   mongo: {
+    /*/
     uri:    process.env.MONGOLAB_URI ||
             process.env.MONGOHQ_URL ||
             process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME ||
-            'mongodb://localhost/hero'
+            'mongodb://119.202.28.205',
+            /**/
+    host: '119.202.28.205',
+    database : 'hero',
+    port: '9317',
+    options:{
+      user: 'admin',
+      pass: 'jhsong85',
+    }
   }
 };

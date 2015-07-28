@@ -21,7 +21,11 @@ function isAuthenticated() {
       if(req.query && req.query.hasOwnProperty('access_token')) {
         req.headers.authorization = 'Bearer ' + req.query.access_token;
       }
-      validateJwt(req, res, next);
+      validateJwt(req, res, function(err){
+        if(err) return res.status(err.status).json(err);
+        next();
+      });
+      //validateJwt(req, res, next);
     })
     // Attach user to request
     .use(function(req, res, next) {
@@ -32,7 +36,8 @@ function isAuthenticated() {
         req.user = user;
         next();
       });
-    });
+    })
+    ;
 }
 
 /**

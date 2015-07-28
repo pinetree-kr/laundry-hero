@@ -3,7 +3,26 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <h1>Change Password</h1>
+      <h3>기본 정보</h3>
+    </div>
+    <div class="col-sm-12">
+      <form class="form" name="detailForm">
+        <div class="form-group">
+          <label>이름</label>
+          <input type="text" ng-readonly="true" name="username" class="form-control" ng-model="getCurrentUser().name"/>
+          </p>
+        </div>
+        <div class="form-group">
+          <label>email</label>
+          <input type="text" ng-readonly="true" name="email" class="form-control" ng-model="getCurrentUser().email"/>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row" ng-show="getCurrentUser().provider === 'local'">
+    <div class="col-sm-12">
+      <h2>Change Password</h2>
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="changePassword(form)" novalidate>
